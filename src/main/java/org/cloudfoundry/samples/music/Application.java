@@ -1,6 +1,6 @@
 package org.cloudfoundry.samples.music;
 
-import org.cloudfoundry.samples.music.config.data.SpringApplicationContextInitializer;
+import org.cloudfoundry.samples.music.config.SpringApplicationContextInitializer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

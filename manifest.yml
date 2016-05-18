@@ -1,0 +1,9 @@
+---
+applications:
+- name: spring-music
+  buildpack: java_buildpack
+  path: target/spring-music-1.0.0-SNAPSHOT.jar
+  memory: 384M 
+  disk_quota: 256M  
+  services:
+  - spring-music-db

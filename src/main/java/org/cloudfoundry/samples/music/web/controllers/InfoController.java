@@ -24,7 +24,7 @@ public class InfoController {
         this.springEnvironment = springEnvironment;
     }
 
-    @RequestMapping(value = "/app")
+    @RequestMapping(value = "/appinfo")
     public ApplicationInfo info() {
         return new ApplicationInfo(springEnvironment.getActiveProfiles(), getServiceNames());
     }

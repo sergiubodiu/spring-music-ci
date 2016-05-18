@@ -89,7 +89,8 @@ function AlbumsController($scope, $modal, Albums, Album, Status) {
     $scope.deleteAlbum = function (album) {
         Album.delete({id: album.id},
             function () {
-                Status.success(album.title + " by " + album.artist + " was deleted from your collection");
+                Status.success("Album deleted");
+                //Status.success(album.title + " by " + album.artist + " was deleted from your collection");
                 list();
             },
             function (result) {

@@ -1,0 +1,36 @@
+
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+security:
+  user:
+    password: password
+
+---
+spring:
+  profiles: in-memory
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+---
+spring:
+  profiles: mysql
+  jpa:
+    database: MYSQL
+
+---
+spring:
+  profiles: postgres
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+---
+spring:
+  profiles: oracle
+  jpa:
+    hibernate:
+      ddl-auto: create

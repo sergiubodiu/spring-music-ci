@@ -1,4 +1,4 @@
-package org.cloudfoundry.samples.music.config.data;
+package org.cloudfoundry.samples.music.config;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -20,8 +20,7 @@ public class SpringApplicationContextInitializer implements ApplicationContextIn
 
     private static final Log logger = LogFactory.getLog(SpringApplicationContextInitializer.class);
 
-    private static final Map<Class<? extends ServiceInfo>, String> serviceTypeToProfileName =
-            new HashMap<>();
+    private static final Map<Class<? extends ServiceInfo>, String> serviceTypeToProfileName = new HashMap<>();
     private static final List<String> validLocalProfiles = Arrays.asList("mysql", "postgres", "mongodb", "redis");
 
     public static final String IN_MEMORY_PROFILE = "in-memory";
@@ -58,7 +57,7 @@ public class SpringApplicationContextInitializer implements ApplicationContextIn
             return null;
         }
 
-        List<String> profiles = new ArrayList<String>();
+        List<String> profiles = new ArrayList<>();
 
         List<ServiceInfo> serviceInfos = cloud.getServiceInfos();
 
@@ -95,7 +94,7 @@ public class SpringApplicationContextInitializer implements ApplicationContextIn
     }
 
     private String[] getActiveProfile(ConfigurableEnvironment appEnvironment) {
-        List<String> serviceProfiles = new ArrayList<String>();
+        List<String> serviceProfiles = new ArrayList<>();
 
         for (String profile : appEnvironment.getActiveProfiles()) {
             if (validLocalProfiles.contains(profile)) {

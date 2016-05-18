@@ -1,7 +1,7 @@
 package org.cloudfoundry.samples.music.config.data;
 
 import org.cloudfoundry.samples.music.domain.Album;
-import org.cloudfoundry.samples.music.repositories.redis.RedisAlbumRepository;
+import org.cloudfoundry.samples.music.domain.repositories.redis.RedisAlbumRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -22,7 +22,7 @@ public class RedisConfig {
 
     @Bean
     public RedisTemplate<String, Album> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
-        RedisTemplate<String, Album> template = new RedisTemplate<String, Album>();
+        RedisTemplate<String, Album> template = new RedisTemplate<>();
 
         template.setConnectionFactory(redisConnectionFactory);
 

@@ -3,6 +3,7 @@ package org.cloudfoundry.samples.music.domain;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,8 +13,9 @@ import javax.persistence.Id;
 public class Album {
 
     @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    @Column(length=40)
+    @GeneratedValue(generator="randomId")
+    @GenericGenerator(name="randomId", strategy="org.cloudfoundry.samples.music.domain.RandomIdGenerator")
     private String id;
 
     private String title;

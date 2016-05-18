@@ -9,8 +9,8 @@
 }
 
 .navbar .container {
-    /*background-color: #008a00;*/
-    background: linear-gradient(180deg, #008a00, #006b00);
+    background-color: Blue;
+    /*background: linear-gradient(180deg, #008a00, #006b00);*/
 }
 
 .navbar .navbar-brand {
